@@ -1,0 +1,16 @@
+# Defina as opções de compilação
+OPTIONS = -Wall -Wpedantic -Wno-unused-result -g
+LIBRARIES = -lm
+
+# Regra padrão para compilar o programa
+Main: Main.c
+	gcc $(OPTIONS) Main.c -o Main $(LIBRARIES)
+
+# Regra para executar o programa
+run: Main
+	./Main
+
+# Regra para limpar os arquivos gerados
+clean:
+	rm -f Main
+
